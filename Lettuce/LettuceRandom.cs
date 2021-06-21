@@ -1,11 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
+
 namespace Lettuce
 {
     // Random class
     public static class LettuceRandom
     {
+        public static string debugPath = Directory.GetCurrentDirectory() + @"\debug.txt";
+        public enum DebugType
+        {
+            console,
+            file
+        }
         public static double NextGaussian(double min = 0, double max = 1, double hor_mean = 0, double std_deviation = 1)
         {
             double mean = ((max + min) / 2.0) + hor_mean;
@@ -20,6 +28,40 @@ namespace Lettuce
         public static double NextGaussian(this Random random, double min, double max, double hor_mean = 0, double stdDev = 1)
         {
             return NextGaussian(min, max, hor_mean, stdDev);
+        }
+        public static void NextGaussianDebug(int n, int m, DebugType debugType)
+        {
+            double[] ns = new double[n];
+            for (int i = 0; i < n; i++)
+            {
+                ns[i] = LettuceRandom.NextGaussian();
+            }
+            int am = m;
+            if (debugType == DebugType.console)
+            {
+                for (int _ = 0; _ < am; _++)
+                {
+                    int len = ns.Where(n => n < 1f / am * _ && n > 1f / am * (_ - 1)).ToArray().Length;
+                    for (int i = 0; i < len; i++) Console.Write("*");
+                    Console.WriteLine();
+                }
+            }
+            else if (debugType == DebugType.file)
+            {
+                using (StreamWriter file = new StreamWriter(debugPath, false))
+                {
+                    for (int _ = 0; _ < am; _++)
+                    {
+                        int len = ns.Where(n => n < 1f / am * _ && n > 1f / am * (_ - 1)).ToArray().Length;
+
+                        StringBuilder sb = new StringBuilder(len);
+                        for (int i = 0; i < len; i++) sb.Append("*");
+                        sb.Append("\n");
+
+                        file.WriteLine(sb.ToString());
+                    }
+                }
+            }
         }
         public static bool NextBool()
         {
