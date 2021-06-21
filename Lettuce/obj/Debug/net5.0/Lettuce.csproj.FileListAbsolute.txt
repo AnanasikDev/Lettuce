@@ -1,0 +1,16 @@
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.deps.json
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.dll
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\ref\Lettuce.dll
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.pdb
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.csprojAssemblyReference.cache
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.AssemblyInfoInputs.cache
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.AssemblyInfo.cs
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.csproj.CoreCompileInputs.cache
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.dll
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\ref\Lettuce.dll
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.pdb
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.exe
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.runtimeconfig.json
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\bin\Debug\net5.0\Lettuce.runtimeconfig.dev.json
+C:\GitArchive\Archive\Code\C#\Lettuce\Lettuce\obj\Debug\net5.0\Lettuce.genruntimeconfig.cache
