@@ -6,20 +6,20 @@ namespace Lettuce
     // Random class
     public static class LettuceRandom
     {
-        public static double NextGaussian(double min, double max, double hor_mean = 0, double std_deviation = 1)
+        public static double NextGaussian(double min = 0, double max = 1, double hor_mean = 0, double std_deviation = 1)
         {
             double mean = ((max + min) / 2.0) + hor_mean;
             Random rand = new Random();
             double u1 = 1.0 - rand.NextDouble();
             double u2 = 1.0 - rand.NextDouble();
-            double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1) * Math.Sin(2.0 * Math.PI * u2) + 16) - 4; 
+            double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1) * Math.Sin(2.0 * Math.PI * u2) + 16) - 4;
 
             double randNormal = mean + std_deviation * randStdNormal;
             return randNormal;
         }
-        public static double NextGaussian(this Random random, double hor_mean = 0, double stdDev = 1)
+        public static double NextGaussian(this Random random, double min, double max, double hor_mean = 0, double stdDev = 1)
         {
-            return NextGaussian(hor_mean, stdDev);
+            return NextGaussian(min, max, hor_mean, stdDev);
         }
         public static bool NextBool()
         {
@@ -41,12 +41,24 @@ namespace Lettuce
             Random r = new Random();
             for (int i = 0; i < collection.Count(); i++)
             {
-                int j = r.Next(0, i+1);
+                int j = r.Next(0, i + 1);
                 T temp = collection[i];
                 collection[i] = shuffled[j];
                 shuffled[j] = temp;
             }
             return shuffled;
+        }
+        public static int[] Unrepeatable(int min, int max, int step = 1)
+        {
+            int[] range = new int[(int)Math.Floor((decimal)(max - min) / step)];
+            for (int i = 0; i < range.Length; i++) range[i] = min + step * i;
+            return range.Shuffle();
+        }
+        public static float[] Unrepeatable(float min, float max, float step = 1)
+        {
+            float[] range = new float[(int)Math.Floor((max - min) / step)];
+            for (int i = 0; i < range.Length; i++) range[i] = min + step * i;
+            return range.Shuffle();
         }
     }
 }
