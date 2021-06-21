@@ -6,10 +6,7 @@ namespace Lettuce
     {
         static void Main(string[] args)
         {
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine(LettuceRandom.NextGaussian(1, 5));
-            }
+            Console.WriteLine(string.Join(", ", new int[5] { 1, 2, 3, 4, 5 }.Shuffle()));
         }
     }
 }
