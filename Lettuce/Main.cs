@@ -8,7 +8,7 @@ namespace Lettuce
         {
             for (int i = 0; i < 100; i++)
             {
-                Console.WriteLine(LettuceRandom.NextGaussian());
+                Console.WriteLine(LettuceRandom.NextGaussian(1, 5));
             }
         }
     }
