@@ -5,9 +5,10 @@ using System.Text;
 
 namespace Lettuce
 {
-    // Random class
     public static class LettuceRandom
     {
+        // Lettuce\Lettuce\bin\Debug\net5.0\debug.txt
+        // You may change this path to have another file for debugging
         public static string debugPath = Directory.GetCurrentDirectory() + @"\debug.txt";
         public enum DebugType
         {
@@ -67,14 +68,13 @@ namespace Lettuce
         {
             return new Random().Next(0, 1) == 0 ? false : true;
         }
-        /// <summary>
-        /// returns false/true = 1/ratio
-        /// </summary>
-        /// <param name="ratio"></param>
-        /// <returns></returns>
-        public static bool NextBool(int ratio)
+        public static bool NextBool(int a, int b)
         {
-            return new Random().Next(0, ratio) == 0 ? false : true;
+            return new Random().Next(0, a+b) < a ? false : true;
+        }
+        public static T[] ShuffleCollection<T>(T[] collection)
+        {
+            return collection.Shuffle();
         }
         public static T[] Shuffle<T>(this T[] collection)
         {

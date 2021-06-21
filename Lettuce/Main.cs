@@ -6,8 +6,10 @@ namespace Lettuce
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(LettuceRandom.debugPath);
-            LettuceRandom.NextGaussianDebug(200, 200, LettuceRandom.DebugType.file);
+            for (int i = 0; i < 100; i++)
+            {
+                Console.WriteLine(LettuceRandom.NextBool(1, 7));
+            }
         }
     }
 }
